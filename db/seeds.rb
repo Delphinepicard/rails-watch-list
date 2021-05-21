@@ -15,4 +15,4 @@ List.create(name: "action movies")
 List.create(name: "love movies")
 hero = List.create(name: "heroes movies")
 
-Bookmark.create(movie: ocean, list: hero, commment: "iiuiuiuiu")
+Bookmark.create(movie: ocean, list: hero, commment: "amazing actors !")
