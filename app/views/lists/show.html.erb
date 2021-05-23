@@ -1,7 +1,16 @@
 
-<h2>Movies List</h2>
+<h2><%= @list.name %></h2>
 
-<p><%= @list.name %></p>
+<% @list.movies.each do |movie| %>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <%= image_tag movie.poster_url, alt: movie.title, class: 'movie-img rounded-top' %>
+      <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
+        <%= movie.overview %>
+          <i class="fas fa-quote-left mr-2"></i><small class="flex-grow-1"><%= bookmark.comment %></small>
+              </div>
+              <small class="text-right flex-shrink-0"><%= link_to 'delete', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
+    <% end %>
+  </div>
 
 <h3>Reviews</h3>
 

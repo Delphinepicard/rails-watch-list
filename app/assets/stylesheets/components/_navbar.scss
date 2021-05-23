@@ -1,10 +1,24 @@
-.navbar-lewagon {
+.navbar-expand-sm.navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: black;
+
+  h1#title {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 24px;
+    text-align: center;
+  }
+  
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
+  a.nav-link {
+    color: white;
+  }
+
 }
 
 .navbar-lewagon .navbar-brand img {
